@@ -1,0 +1,12 @@
+---
+- name: Remover usuarios
+  ansible.builtin.user:
+    name: "{{ user_input_name }}"
+    group: "{{ group_input_name }}"
+    state: absent
+    remove: true
+
+- name: Remover grupos
+  ansible.builtin.group:
+    name: "{{ group_input_name }}"
+    state: absent

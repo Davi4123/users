@@ -1,0 +1,11 @@
+---
+# tasks file for user
+- name: Crear usuarios
+  ansible.builtin.include_tasks:
+    file: 'Crear.yml'
+  when: operation == 'Crear'
+
+- name: Desinstalar Apache
+  ansible.builtin.include_tasks:
+    file: 'Eliminar.yml'
+  when: operation == 'Eliminar'
