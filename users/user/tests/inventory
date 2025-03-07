@@ -1,2 +1,0 @@
-[webserver]
-192.168.22.132 ansible_user: root ansible_password: davicho11
