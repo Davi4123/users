@@ -1,0 +1,13 @@
+---
+- name: Creacion de usuarios con rol y grupo
+  hosts: webserver
+  gather_facts: false
+  vars:
+    name_group: "{{  group_input_name }}"
+    name_user: "{{  user_input_name }}"
+    user_password: "{{ user_password | password_hash('sha512') }}" 
+    operation: "{{  OPERATION }}"
+  tasks:
+    - name: Incluye rol
+      ansible.builtin.include_role:
+        name: "user"
